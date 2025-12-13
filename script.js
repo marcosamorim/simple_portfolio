@@ -57,23 +57,53 @@ function renderSkills(skills) {
 function renderProjects(projects) {
   const root = document.getElementById("projects");
   root.innerHTML = "";
+
   for (const p of projects || []) {
-    const title = el("a", {
-      href: p.url,
-      target: "_blank",
-      rel: "noopener noreferrer",
-      text: p.name
-    });
+    const header = el("div", { class: "project-header" }, [
+      el("span", { class: "project-title", text: p.name })
+    ]);
+
     const desc = el("p", { class: "muted", text: p.description || "" });
 
-    const tagsWrap = el("div", { class: "tags" });
-    for (const t of (p.tags || [])) tagsWrap.appendChild(el("span", { class: "chip", text: t }));
+    const actions = el("div", { class: "project-actions" });
 
-    root.appendChild(el("div", { class: "project" }, [
-      title,
-      desc,
-      tagsWrap
-    ]));
+    if (p.links?.live) {
+      actions.appendChild(
+        el("a", {
+          class: "badge live",
+          href: p.links.live,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: "Live"
+        })
+      );
+    }
+
+    if (p.links?.github) {
+      actions.appendChild(
+        el("a", {
+          class: "badge github",
+          href: p.links.github,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          text: "GitHub"
+        })
+      );
+    }
+
+    const tagsWrap = el("div", { class: "tags" });
+    for (const t of p.tags || []) {
+      tagsWrap.appendChild(el("span", { class: "chip", text: t }));
+    }
+
+    root.appendChild(
+      el("div", { class: "project" }, [
+        header,
+        desc,
+        actions,
+        tagsWrap
+      ])
+    );
   }
 }
 

@@ -17,14 +17,30 @@
     {
       "name": "URL Shortener Frontend",
       "description": "A frontend for the URL shortener microservice built with Django and Wagtail.",
-      "url": "https://rdrt.uk",
+      "links": {
+        "live": "https://rdrt.uk",
+        "github": "https://github.com/marcosamorim/url_shortener_ng"
+      },
       "tags": ["Angular"]
     },
     {
       "name": "URL Shortener",
       "description": "An URL shortener microservice built with FastAPI and PostgreSQL.",
-      "url": "https://api.rdrt.uk/docs",
+      "links": {
+        "live": "https://api.rdrt.uk/docs",
+        "github": "https://github.com/marcosamorim/url_shortener"
+      },
       "tags": ["FastAPI", "PostgreSQL", "Python"]
+    },
+    {
+      "name": "Simple Portfolio",
+      "description": "Lightweight single-page portfolio built with vanilla HTML, CSS and JavaScript, deployed on Cloudflare Pages.",
+      "links": {
+        "live": "https://mamorim.dev",
+        "github": "https://github.com/marcosamorim/simple_portfolio"
+      },
+
+      "tags": ["HTML", "CSS", "JavaScript", "Cloudflare Pages"]
     }
   ]
 }

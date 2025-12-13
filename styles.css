@@ -99,6 +99,47 @@ p { margin: 8px 0 0; line-height: 1.55; }
 @media (max-width: 760px) {
   .projects { grid-template-columns: 1fr; }
 }
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-title {
+  font-weight: 600;
+}
+
+.project-actions {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  transition: transform .1s ease, background .15s ease;
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+}
+
+.badge.live {
+  border-color: #2ecc71;
+  color: #2ecc71;
+}
+
+.badge.github {
+  border-color: #8892ff;
+  color: #8892ff;
+}
+
 .project {
   padding: 14px;
   border-radius: 14px;
@@ -113,7 +154,13 @@ p { margin: 8px 0 0; line-height: 1.55; }
 .project a:hover { text-decoration: underline; }
 .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
 
-#about p { margin: 10px 0 0; }
-#about p:first-child { margin-top: 0; }
+#about p {
+  margin: 10px 0 0;
+  line-height: 1.65;
+}
+
+#about p:first-child {
+  margin-top: 0;
+}
 
 .footer { text-align: center; padding: 6px 0; }
