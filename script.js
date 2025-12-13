@@ -91,6 +91,15 @@ function renderProjects(projects) {
       );
     }
 
+    if (p.status === "wip") {
+      actions.appendChild(
+        el("span", {
+          class: "badge wip",
+          text: "WIP"
+        })
+      );
+    }
+
     const tagsWrap = el("div", { class: "tags" });
     for (const t of p.tags || []) {
       tagsWrap.appendChild(el("span", { class: "chip", text: t }));

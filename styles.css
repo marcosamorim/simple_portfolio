@@ -140,6 +140,11 @@ p { margin: 8px 0 0; line-height: 1.55; }
   color: #8892ff;
 }
 
+.badge.wip {
+  border-color: #f39c12;
+  color: #f39c12;
+}
+
 .project {
   padding: 14px;
   border-radius: 14px;
