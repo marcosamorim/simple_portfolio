@@ -23,7 +23,7 @@
         "github": "https://github.com/marcosamorim/url_shortener_ng"
       },
       "status": "wip",
-      "tags": ["Angular"]
+      "tags": ["Angular", "Docker"]
     },
     {
       "name": "URL Shortener",
@@ -33,7 +33,7 @@
         "github": "https://github.com/marcosamorim/url_shortener"
       },
       "status": "wip",
-      "tags": ["FastAPI", "PostgreSQL", "Python"]
+      "tags": ["FastAPI", "PostgreSQL", "Python", "Docker"]
     },
     {
       "name": "Simple Portfolio",

@@ -98,6 +98,13 @@ function renderProjects(projects) {
           text: "WIP"
         })
       );
+    } else if (p.status === "completed") {
+      actions.appendChild(
+          el("span", {
+            class: "badge completed",
+            text: "Completed"
+          })
+      );
     }
 
     const tagsWrap = el("div", { class: "tags" });
