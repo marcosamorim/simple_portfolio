@@ -6,7 +6,7 @@
   "skills": [
     "Python", "Django", "Wagtail", "REST APIs", "PostgreSQL",
     "Docker", "Kubernetes", "AWS", "CI/CD", "Heroku", "Git",
-    "Angular", "FastAPI", "GitHub Actions"
+    "Angular", "FastAPI", "GitHub Actions", "GitFlow", "Cloudflare Pages"
   ],
   "links": [
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mamorim86" },
@@ -19,21 +19,30 @@
       "name": "URL Shortener Frontend",
       "description": "A frontend for the URL shortener microservice built with Django and Wagtail.",
       "links": {
-        "live": "https://rdrt.uk",
+        "live": "https://app.rdrt.uk",
         "github": "https://github.com/marcosamorim/url_shortener_ng"
       },
       "status": "wip",
-      "tags": ["Angular", "Docker"]
+      "tags": ["Angular", "Docker", "HTML", "CSS", "JavaScript"]
     },
     {
       "name": "URL Shortener",
       "description": "An URL shortener microservice built with FastAPI and PostgreSQL.",
       "links": {
-        "live": "https://api.rdrt.uk/docs",
+        "live": "https://rdrt.uk/docs",
         "github": "https://github.com/marcosamorim/url_shortener"
       },
+      "tags": ["FastAPI", "SQLAlchemy", "Alembic", "PostgreSQL", "GitFlow", "Python", "Docker"]
+    },
+    {
+      "name": "Auth Service",
+      "description": "Small authentication service providing user registration, login (JWT), and an /auth/me endpoint for shared backend auth.",
+      "links": {
+        "github": "https://github.com/marcosamorim/auth-service",
+        "live": "https://auth.rdrt.uk/docs"
+      },
       "status": "wip",
-      "tags": ["FastAPI", "PostgreSQL", "Python", "Docker"]
+      "tags": ["FastAPI", "SQLAlchemy", "PostgreSQL", "PyJWT", "Python", "GitFlow", "Docker"]
     },
     {
       "name": "Simple Portfolio",
@@ -42,7 +51,6 @@
         "live": "https://mamorim.dev",
         "github": "https://github.com/marcosamorim/simple_portfolio"
       },
-      "status": "wip",
       "tags": ["HTML", "CSS", "JavaScript", "Cloudflare Pages"]
     }
   ]
