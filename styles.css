@@ -76,6 +76,34 @@ p { margin: 8px 0 0; line-height: 1.55; }
   transition: transform .08s ease, background .15s ease;
 }
 .btn:hover { background: var(--btnHover); transform: translateY(-1px); }
+.btn-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.link-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: rgba(255,255,255,0.08);
+}
+.link-icon.pdf {
+  width: 24px;
+  height: 24px;
+}
+.link-icon.brand {
+  background: #0b0d12;
+  border-radius: 6px;
+  padding: 2px;
+}
+.link-icon.emoji {
+  width: auto;
+  height: auto;
+  font-size: 16px;
+  line-height: 1;
+  background: transparent;
+}
 
 .chips {
   display: flex;
@@ -113,6 +141,26 @@ p { margin: 8px 0 0; line-height: 1.55; }
   display: flex;
   gap: 8px;
   margin: 10px 0 4px;
+}
+.badge-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.badge-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.badge.live .badge-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  transform: translateY(1px);
+}
+.badge.live .badge-content {
+  gap: 3px;
 }
 
 .badge {

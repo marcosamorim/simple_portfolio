@@ -36,13 +36,66 @@ function renderLinks(links) {
   const root = document.getElementById("links");
   root.innerHTML = "";
   for (const link of links || []) {
+    const label = link.label || "Link";
+    const url = link.url || "#";
+    const isPdf = /\.pdf(\?|$)/i.test(url) || /cv/i.test(label);
+    const isExternal = /^https?:\/\//i.test(url);
+    let iconNode;
+
+    if (isPdf) {
+      iconNode = el("img", {
+        class: "link-icon pdf",
+        src: "./assets/pdf-icon.svg",
+        alt: "PDF",
+        loading: "lazy"
+      });
+    } else if (/github/i.test(label) || /github\.com/i.test(url)) {
+      iconNode = el("img", {
+        class: "link-icon",
+        src: "./assets/github.png",
+        alt: "GitHub",
+        loading: "lazy"
+      });
+    } else if (isExternal) {
+      let iconUrl = "";
+      let altText = "";
+      try {
+        const { hostname } = new URL(url);
+        if (/linkedin\.com/i.test(hostname) || /linkedin/i.test(label)) {
+          iconUrl = "./assets/linkedin.png";
+          altText = "LinkedIn";
+        } else if (/rdrt\.uk/i.test(hostname) || /rdrt/i.test(label)) {
+          iconUrl = "./assets/rdrt-icon.png";
+          altText = "rdrt";
+        }
+      } catch {
+        iconUrl = "";
+      }
+      if (iconUrl) {
+        iconNode = el("img", {
+          class: "link-icon",
+          src: iconUrl,
+          alt: altText,
+          loading: "lazy"
+        });
+      } else {
+        iconNode = el("span", { class: "link-icon emoji", text: "🔗" });
+      }
+    } else {
+      iconNode = el("span", { class: "link-icon emoji", text: "🔗" });
+    }
+
     const a = el("a", {
       class: "btn",
-      href: link.url,
+      href: url,
       target: "_blank",
       rel: "noopener noreferrer"
     });
-    a.appendChild(el("span", { text: link.label }));
+    const content = el("span", { class: "btn-content" }, [
+      iconNode,
+      el("span", { text: label })
+    ]);
+    a.appendChild(content);
     a.appendChild(el("span", { text: "↗", class: "muted" }));
     root.appendChild(a);
   }
@@ -73,9 +126,18 @@ function renderProjects(projects) {
           class: "badge live",
           href: p.links.live,
           target: "_blank",
-          rel: "noopener noreferrer",
-          text: "Live"
-        })
+          rel: "noopener noreferrer"
+        }, [
+          el("span", { class: "badge-content" }, [
+            el("span", { text: "Live" }),
+            el("img", {
+              class: "badge-icon",
+              src: "./assets/open-in-new.svg",
+              alt: "Opens in a new tab",
+              loading: "lazy"
+            })
+          ])
+        ])
       );
     }
 
@@ -85,9 +147,18 @@ function renderProjects(projects) {
           class: "badge github",
           href: p.links.github,
           target: "_blank",
-          rel: "noopener noreferrer",
-          text: "GitHub"
-        })
+          rel: "noopener noreferrer"
+        }, [
+          el("span", { class: "badge-content" }, [
+            el("img", {
+              class: "badge-icon",
+              src: "./assets/github.png",
+              alt: "GitHub",
+              loading: "lazy"
+            }),
+            el("span", { text: "GitHub" })
+          ])
+        ])
       );
     }
 
