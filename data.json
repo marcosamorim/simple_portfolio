@@ -2,7 +2,7 @@
   "name": "Marcos Amorim",
   "tagline": "Python/Django/Wagtail developer",
   "location": "United Kingdom",
-  "about": "Backend-focused developer with over 15 years of experience building and supporting production systems.\n\nI specialise in Python, with extensive hands-on experience using Django and Wagtail for complex web platforms, APIs, and CMS-driven applications.\n\nMy background includes designing and consuming RESTful APIs, working with PostgreSQL, and setting up CI/CD pipelines using Jenkins and GitHub Actions. I’ve also been responsible for infrastructure and deployments using Docker, Kubernetes, and AWS.\n\nAlongside Django, I’m currently expanding my toolkit with FastAPI, focusing on high-performance, API-first architectures and modern backend patterns.",
+  "about": "I'm a backend-focused developer with a soft spot for clean architecture and reliable delivery.\n\nOver the last 15+ years I've built web platforms and CMS-driven sites using Python, Django, and Wagtail, often shipping end-to-end features in fast-moving teams.\n\nI enjoy the full lifecycle from design to deployment, and I keep things running smoothly with Docker, Kubernetes, AWS, and CI/CD.\n\nThese days I'm adding FastAPI to my toolkit and exploring modern backend patterns.",
   "skills": [
     "Python", "Django", "Wagtail", "REST APIs", "PostgreSQL",
     "Docker", "Kubernetes", "AWS", "CI/CD", "Heroku", "Git",
@@ -12,7 +12,7 @@
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mamorim86" },
     { "label": "GitHub", "url": "https://github.com/marcosamorim" },
     { "label": "CV (PDF)", "url": "/assets/CV_Marcos_Amorim.pdf" },
-    { "label": "Website", "url": "https://mamorim.dev" }
+    { "label": "RDRT app", "url": "https://app.rdrt.uk" }
   ],
   "projects": [
     {
