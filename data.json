@@ -1,6 +1,7 @@
 {
   "name": "Marcos Amorim",
   "tagline": "Python/Django/Wagtail developer",
+  "current": "building the rdrt URL shortener stack",
   "location": "United Kingdom",
   "about": "I'm a backend-focused developer with a soft spot for clean architecture and reliable delivery.\n\nOver the last 15+ years I've built web platforms and CMS-driven sites using Python, Django, and Wagtail, often shipping end-to-end features in fast-moving teams.\n\nI enjoy the full lifecycle from design to deployment, and I keep things running smoothly with Docker, Kubernetes, AWS, and CI/CD.\n\nThese days I'm adding FastAPI to my toolkit and exploring modern backend patterns.",
   "skills": [
@@ -22,7 +23,6 @@
         "live": "https://app.rdrt.uk",
         "github": "https://github.com/marcosamorim/url_shortener_ng"
       },
-      "status": "wip",
       "tags": ["Angular", "Docker", "HTML", "CSS", "JavaScript"]
     },
     {
@@ -41,7 +41,6 @@
         "github": "https://github.com/marcosamorim/auth-service",
         "live": "https://auth.rdrt.uk/docs"
       },
-      "status": "wip",
       "tags": ["FastAPI", "SQLAlchemy", "PostgreSQL", "PyJWT", "Python", "GitFlow", "Docker"]
     },
     {

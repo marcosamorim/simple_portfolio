@@ -7,13 +7,18 @@
   --btn: #171c2e;
   --btnHover: #1d2440;
   --radius: 16px;
+  --heading-font: "Iowan Old Style", "Palatino", "Book Antiqua", serif;
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  background: radial-gradient(1200px 600px at 20% 0%, #142044, transparent), var(--bg);
+  background:
+    radial-gradient(1000px 500px at 10% -10%, rgba(46, 204, 113, 0.12), transparent 60%),
+    radial-gradient(1100px 700px at 90% 0%, rgba(136, 146, 255, 0.14), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02)),
+    var(--bg);
   color: var(--text);
 }
 
@@ -47,8 +52,8 @@ body {
   border: 1px solid var(--border);
 }
 
-h1 { margin: 0; font-size: 28px; letter-spacing: .2px; }
-h2 { margin: 0 0 10px; font-size: 18px; }
+h1 { margin: 0; font-size: 28px; letter-spacing: .2px; font-family: var(--heading-font); }
+h2 { margin: 0 0 10px; font-size: 18px; font-family: var(--heading-font); }
 p { margin: 8px 0 0; line-height: 1.55; }
 
 .muted { color: var(--muted); }
@@ -188,23 +193,30 @@ p { margin: 8px 0 0; line-height: 1.55; }
   color: #8892ff;
 }
 
-.badge.wip {
-  border-color: #f39c12;
-  color: #f39c12;
-}
-
-.badge.completed {
-  border-color: #1abc9c;
-  color: #1abc9c;
-}
 
 
 .project {
+  position: relative;
+  overflow: hidden;
   padding: 14px;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.03);
 }
+.project::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent, #2d364f), transparent);
+  opacity: 0.9;
+}
+.project--frontend { --accent: #66d0ff; }
+.project--backend { --accent: #2ecc71; }
+.project--fullstack { --accent: #8b6bff; }
+.project--infra { --accent: #f39c12; }
 .project a {
   color: var(--text);
   text-decoration: none;
@@ -215,7 +227,10 @@ p { margin: 8px 0 0; line-height: 1.55; }
 
 #about p {
   margin: 10px 0 0;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+#about {
+  max-width: 68ch;
 }
 
 #about p:first-child {

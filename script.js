@@ -112,6 +112,17 @@ function renderProjects(projects) {
   root.innerHTML = "";
 
   for (const p of projects || []) {
+    const tagList = (p.tags || []).map(t => String(t).toLowerCase());
+    const tagSet = new Set(tagList);
+    const isFrontend = ["angular", "html", "css", "javascript"].some(t => tagSet.has(t));
+    const isBackend = ["python", "django", "wagtail", "fastapi", "sqlalchemy", "alembic", "postgresql", "rest apis"].some(t => tagSet.has(t));
+    const isInfra = ["docker", "kubernetes", "aws", "ci/cd", "heroku", "cloudflare pages"].some(t => tagSet.has(t));
+    let themeClass = "project";
+    if (isFrontend && isBackend) themeClass += " project--fullstack";
+    else if (isBackend) themeClass += " project--backend";
+    else if (isFrontend) themeClass += " project--frontend";
+    else if (isInfra) themeClass += " project--infra";
+
     const header = el("div", { class: "project-header" }, [
       el("span", { class: "project-title", text: p.name })
     ]);
@@ -162,29 +173,13 @@ function renderProjects(projects) {
       );
     }
 
-    if (p.status === "wip") {
-      actions.appendChild(
-        el("span", {
-          class: "badge wip",
-          text: "WIP"
-        })
-      );
-    } else if (p.status === "completed") {
-      actions.appendChild(
-          el("span", {
-            class: "badge completed",
-            text: "Completed"
-          })
-      );
-    }
-
     const tagsWrap = el("div", { class: "tags" });
     for (const t of p.tags || []) {
       tagsWrap.appendChild(el("span", { class: "chip", text: t }));
     }
 
     root.appendChild(
-      el("div", { class: "project" }, [
+      el("div", { class: themeClass }, [
         header,
         desc,
         actions,
@@ -199,6 +194,7 @@ function renderProjects(projects) {
     const data = await loadData();
     setText("name", data.name);
     setText("tagline", data.tagline);
+    setText("current", data.current ? `Currently: ${data.current}` : "");
     setText("location", data.location ? `📍 ${data.location}` : "");
     renderAbout(data.about);
 
