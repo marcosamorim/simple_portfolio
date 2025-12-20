@@ -10,10 +10,10 @@
     "Angular", "FastAPI", "GitHub Actions", "GitFlow", "Cloudflare Pages"
   ],
   "links": [
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mamorim86" },
-    { "label": "GitHub", "url": "https://github.com/marcosamorim" },
-    { "label": "CV", "url": "/assets/CV_Marcos_Amorim.pdf" },
-    { "label": "rdrt app", "url": "https://app.rdrt.uk" }
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mamorim86", "icon": "linkedin.png" },
+    { "label": "GitHub", "url": "https://github.com/marcosamorim", "icon": "github.png" },
+    { "label": "CV", "url": "/assets/docs/CV_Marcos_Amorim.pdf", "icon": "pdf.svg" },
+    { "label": "rdrt app", "url": "https://app.rdrt.uk", "icon": "rdrt.png" }
   ],
   "projects": [
     {

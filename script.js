@@ -38,49 +38,15 @@ function renderLinks(links) {
   for (const link of links || []) {
     const label = link.label || "Link";
     const url = link.url || "#";
-    const isPdf = /\.pdf(\?|$)/i.test(url) || /cv/i.test(label);
-    const isExternal = /^https?:\/\//i.test(url);
     let iconNode;
 
-    if (isPdf) {
-      iconNode = el("img", {
-        class: "link-icon pdf",
-        src: "./assets/pdf-icon.svg",
-        alt: "PDF",
-        loading: "lazy"
-      });
-    } else if (/github/i.test(label) || /github\.com/i.test(url)) {
+    if (link.icon) {
       iconNode = el("img", {
         class: "link-icon",
-        src: "./assets/github.png",
-        alt: "GitHub",
+        src: `./assets/icons/${link.icon}`,
+        alt: label,
         loading: "lazy"
       });
-    } else if (isExternal) {
-      let iconUrl = "";
-      let altText = "";
-      try {
-        const { hostname } = new URL(url);
-        if (/linkedin\.com/i.test(hostname) || /linkedin/i.test(label)) {
-          iconUrl = "./assets/linkedin.png";
-          altText = "LinkedIn";
-        } else if (/rdrt\.uk/i.test(hostname) || /rdrt/i.test(label)) {
-          iconUrl = "./assets/rdrt-icon.png";
-          altText = "rdrt";
-        }
-      } catch {
-        iconUrl = "";
-      }
-      if (iconUrl) {
-        iconNode = el("img", {
-          class: "link-icon",
-          src: iconUrl,
-          alt: altText,
-          loading: "lazy"
-        });
-      } else {
-        iconNode = el("span", { class: "link-icon emoji", text: "🔗" });
-      }
     } else {
       iconNode = el("span", { class: "link-icon emoji", text: "🔗" });
     }
@@ -143,7 +109,7 @@ function renderProjects(projects) {
             el("span", { text: "Live" }),
             el("img", {
               class: "badge-icon",
-              src: "./assets/open-in-new.svg",
+              src: "./assets/icons/open-in-new.svg",
               alt: "Opens in a new tab",
               loading: "lazy"
             })
@@ -163,7 +129,7 @@ function renderProjects(projects) {
           el("span", { class: "badge-content" }, [
             el("img", {
               class: "badge-icon",
-              src: "./assets/github.png",
+              src: "./assets/icons/github.png",
               alt: "GitHub",
               loading: "lazy"
             }),
