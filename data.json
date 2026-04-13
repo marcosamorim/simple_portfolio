@@ -1,51 +1,67 @@
 {
   "name": "Marcos Amorim",
-  "tagline": "Python/Django/Wagtail developer",
-  "current": "building the rdrt URL shortener stack",
+  "tagline": "Software Engineer | Backend, APIs, Cloud, CI/CD",
+  "current": "building backend services and tools around the rdrt platform",
   "location": "United Kingdom",
-  "about": "I'm a backend-focused developer with a soft spot for clean architecture and reliable delivery.\n\nOver the last 15+ years I've built web platforms and CMS-driven sites using Python, Django, and Wagtail, often shipping end-to-end features in fast-moving teams.\n\nI enjoy the full lifecycle from design to deployment, and I keep things running smoothly with Docker, Kubernetes, AWS, and CI/CD.\n\nThese days I'm adding FastAPI to my toolkit and exploring modern backend patterns.",
+  "about": [
+    "Software engineer with 15+ years of experience building web applications, APIs, internal tools and live digital services.",
+    "My background is strongest in Python, Django, Wagtail, Django REST Framework and FastAPI. Across my roles, I have worked end to end: developing features, designing integrations, improving code quality, supporting production systems, and helping teams release changes safely and reliably.",
+    "I have experience with AWS, Azure, Docker, Kubernetes, Jenkins and GitHub Actions, as well as testing practices including unit testing, Selenium automation and QA collaboration. I enjoy solving practical engineering problems and building systems that are maintainable, reliable and effective in production."
+  ],
   "skills": [
-    "Python", "Django", "Wagtail", "REST APIs", "PostgreSQL",
-    "Docker", "Kubernetes", "AWS", "CI/CD", "Heroku", "Git",
-    "Angular", "FastAPI", "GitHub Actions", "GitFlow", "Cloudflare Pages"
+    "Python",
+    "Django",
+    "FastAPI",
+    "Wagtail",
+    "REST APIs",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "CI/CD",
+    "GitHub Actions",
+    "Angular",
+    "SQLAlchemy",
+    "Git",
+    "Cloudflare Pages"
   ],
   "links": [
     { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mamorim86", "icon": "linkedin.png" },
     { "label": "GitHub", "url": "https://github.com/marcosamorim", "icon": "github.png" },
     { "label": "CV", "url": "/assets/docs/CV_Marcos_Amorim.pdf", "icon": "pdf.svg" },
-    { "label": "rdrt app", "url": "https://app.rdrt.uk", "icon": "rdrt.png" }
+    { "label": "rdrt app", "url": "https://app.rdrt.me", "icon": "rdrt.png" }
   ],
   "projects": [
     {
       "name": "URL Shortener Frontend",
-      "description": "A frontend for the URL shortener microservice built with Django and Wagtail.",
+      "description": "Angular frontend for the URL shortener platform, including authentication flows and integration with backend APIs.",
       "links": {
-        "live": "https://app.rdrt.uk",
+        "live": "https://app.rdrt.me",
         "github": "https://github.com/marcosamorim/url_shortener_ng"
       },
       "tags": ["Angular", "Docker", "HTML", "CSS", "JavaScript"]
     },
     {
       "name": "URL Shortener",
-      "description": "An URL shortener microservice built with FastAPI and PostgreSQL.",
+      "description": "URL shortener service built with FastAPI and PostgreSQL, including redirects, tracking and API documentation.",
       "links": {
-        "live": "https://rdrt.uk/docs",
+        "live": "https://rdrt.me/docs",
         "github": "https://github.com/marcosamorim/url_shortener"
       },
       "tags": ["FastAPI", "SQLAlchemy", "Alembic", "PostgreSQL", "GitFlow", "Python", "Docker"]
     },
     {
       "name": "Auth Service",
-      "description": "Small authentication service providing user registration, login (JWT), and an /auth/me endpoint for shared backend auth.",
+      "description": "Authentication service providing user registration, JWT login and a shared /auth/me endpoint for backend service integration.",
       "links": {
         "github": "https://github.com/marcosamorim/auth-service",
-        "live": "https://auth.rdrt.uk/docs"
+        "live": "https://auth.rdrt.me/docs"
       },
       "tags": ["FastAPI", "SQLAlchemy", "PostgreSQL", "PyJWT", "Python", "GitFlow", "Docker"]
     },
     {
       "name": "Simple Portfolio",
-      "description": "Lightweight single-page portfolio built with vanilla HTML, CSS and JavaScript, deployed on Cloudflare Pages.",
+      "description": "Lightweight single-page portfolio built with HTML, CSS and JavaScript, deployed on Cloudflare Pages.",
       "links": {
         "github": "https://github.com/marcosamorim/simple_portfolio"
       },

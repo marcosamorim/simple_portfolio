@@ -19,7 +19,7 @@ It is data-driven via `data.json` and designed to be fast and easy to customize.
 ## Customize Content
 Edit `data.json`:
 - `name`, `tagline`, `location`, `current`
-- `about` text (supports blank lines for paragraphs)
+- `about` array of strings (one string per paragraph)
 - `links` list (label + url)
 - `skills` list
 - `projects` (name, description, tags, and links)

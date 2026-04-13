@@ -20,12 +20,13 @@ function setText(id, value) {
   if (n) n.textContent = value ?? "";
 }
 
-function renderAbout(text) {
+function renderAbout(about) {
   const root = document.getElementById("about");
   root.innerHTML = "";
 
-  // Split on blank lines into paragraphs
-  const paragraphs = (text || "").split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
+  const paragraphs = Array.isArray(about)
+    ? about.map(p => String(p).trim()).filter(Boolean)
+    : String(about || "").split(/\n\s*\n/).map(s => s.trim()).filter(Boolean);
 
   for (const p of paragraphs) {
     root.appendChild(el("p", { text: p }));
