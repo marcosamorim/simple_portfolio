@@ -161,8 +161,8 @@ function renderProjects(projects) {
     const data = await loadData();
     setText("name", data.name);
     setText("tagline", data.tagline);
-    setText("current", data.current ? `Currently: ${data.current}` : "");
-    setText("location", data.location ? `📍 ${data.location}` : "");
+    setText("current", data.current || "");
+    setText("location", data.location || "");
     renderAbout(data.about);
 
     renderLinks(data.links);
